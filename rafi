@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Modern Shop - Solusi Belanja Praktis</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap');
+        /*<![CDATA[*/
+        /* Karakter & diganti menjadi &amp; agar kompatibel dengan XML/Blogger */
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&amp;display=swap');
         
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
@@ -26,6 +28,7 @@
         /* Sembunyikan Scrollbar */
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        /*]]>*/
     </style>
 </head>
 <body class="bg-gray-50 text-gray-900">
@@ -85,7 +88,7 @@
                 </div>
                 <div class="mt-12 relative sm:max-w-lg sm:mx-auto lg:mt-0 lg:max-w-none lg:mx-0 lg:col-span-6 lg:flex lg:items-center">
                     <div class="relative mx-auto w-full rounded-3xl shadow-2xl overflow-hidden aspect-square bg-gray-100">
-                        <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800" alt="Hero Image">
+                        <img class="w-full h-full object-cover" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&amp;fit=crop&amp;q=80&amp;w=800" alt="Hero Image" />
                     </div>
                 </div>
             </div>
@@ -186,7 +189,8 @@
     <!-- Overlay -->
     <div id="cart-overlay" onclick="toggleCart()" class="fixed inset-0 bg-black/30 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity"></div>
 
-    <script>
+    <script type="text/javascript">
+        //<![CDATA[
         // Data Produk
         const products = [
             { id: 1, name: "Smart Watch Ultra v2", category: "Elektronik", price: 2499000, img: "https://images.unsplash.com/photo-1546868871-70c122469d8b?auto=format&fit=crop&q=80&w=400" },
@@ -221,7 +225,7 @@
                 div.className = 'product-card bg-white rounded-2xl p-4 transition-all duration-300 border border-gray-100 group';
                 div.innerHTML = `
                     <div class="relative overflow-hidden rounded-xl aspect-square mb-4">
-                        <img src="${product.img}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                        <img src="${product.img}" alt="${product.name}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
                         <button onclick="addToCart(${product.id})" class="absolute bottom-4 right-4 bg-white/90 backdrop-blur p-3 rounded-full shadow-lg hover:bg-indigo-600 hover:text-white transition-colors duration-300">
                             <i data-lucide="plus" class="w-5 h-5"></i>
                         </button>
@@ -323,7 +327,7 @@
                     const div = document.createElement('div');
                     div.className = 'flex gap-4 items-center bg-gray-50 p-3 rounded-xl';
                     div.innerHTML = `
-                        <img src="${item.img}" class="w-16 h-16 object-cover rounded-lg">
+                        <img src="${item.img}" class="w-16 h-16 object-cover rounded-lg" />
                         <div class="flex-1">
                             <h4 class="font-bold text-sm text-gray-800">${item.name}</h4>
                             <p class="text-indigo-600 font-bold text-xs">${formatIDR(item.price)}</p>
@@ -373,6 +377,7 @@
                 }
             }, 100);
         });
+        //]]>
     </script>
 </body>
 </html>
